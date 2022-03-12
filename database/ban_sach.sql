@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 28, 2022 lúc 07:21 AM
+-- Thời gian đã tạo: Th3 12, 2022 lúc 04:13 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -36,15 +36,6 @@ CREATE TABLE `chitiethoadon` (
   `thanhtien` decimal(9,2) NOT NULL,
   `madv` varchar(200) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `chitiethoadon`
---
-
-INSERT INTO `chitiethoadon` (`id_chi_tiet_hoadon`, `sodh`, `masp`, `soluong`, `dongia`, `thanhtien`, `madv`) VALUES
-(144, 127, 214, 1, 214, '214.00', '15'),
-(145, 128, 213, 1, 320, '320.00', ''),
-(146, 129, 214, 1, 100, '100.00', '');
 
 -- --------------------------------------------------------
 
@@ -83,15 +74,6 @@ CREATE TABLE `hoadon` (
   `thanhtien` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `hoadon`
---
-
-INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dienthoai`, `hinhthucthanhtoan`, `thanhtien`) VALUES
-(127, 'thanh@gmail.com', '2021-06-26', 'Thanh Truong', 'Hà Nội', '1234567890', 'ATM', '224.00'),
-(128, 'hoanganh@gmail.com', '2021-10-29', 'Hoang Anh', 'heloo', '0852635623', 'ATM', '0.00'),
-(129, 'hoanganh@gmail.com', '2021-10-29', 'Hoang Anh', 'heloo', '0852635623', 'ATM', '0.00');
-
 -- --------------------------------------------------------
 
 --
@@ -128,11 +110,12 @@ CREATE TABLE `loginuser` (
 --
 
 INSERT INTO `loginuser` (`email`, `matkhau`, `HoTen`, `DienThoai`) VALUES
-('abc@gmail.com', 123, 'abc', '136888999'),
-('chamanh@gmail.com', 123, 'Cham Anh', '0833454666'),
-('ha@gmail.com', 123, 'ha', '122335848'),
-('hoanganh@gmail.com', 123, 'Hoang Anh', '0852635623'),
-('kimanh@gmail.com', 123, 'Kim Anh', '0934237266');
+('chien@gmail.com', 123, 'chien', ''),
+('duong@gmail.com', 123, 'duong', ''),
+('hai@gmail.com', 123, 'hai', ''),
+('hieu@gmail.com', 123, 'hieu', ''),
+('phong@gmail.com', 123, 'phong', ''),
+('truong@gmail.com', 123, 'truong', '136888999');
 
 -- --------------------------------------------------------
 
@@ -150,9 +133,7 @@ CREATE TABLE `nhaxuatban` (
 --
 
 INSERT INTO `nhaxuatban` (`ID`, `Ten`) VALUES
-(15, 'ThomsonReuters'),
-(17, 'Wolters Kluwer'),
-(18, 'Hachette Livre');
+(19, 'NXB Kim Đồng');
 
 -- --------------------------------------------------------
 
@@ -178,11 +159,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `date`, `KhuyenMai`, `giakhuyenmai`, `tacgia`) VALUES
-(212, 'Tad', 176, 'book1.png', 18, '<p>Tad Sometimes the biggest stories come from the smallest beginnings… Meet Tad. She’s the smallest tadpole in a big pond, and lives there with all her tadbrothers and tadsisters. Although...</p>\r\n', '2021-10-27', 0, 0, 'Benji Davies'),
-(213, 'On A Magical Do-Nothing Day', 365, 'book2.jpg', 17, '<p>Give the gift of a magical do-nothing day! There\'s so much to notice in the world, if we can un-plug long enough.\r\n\r\nThis picture book with startlingly beautiful words and pictures will spur imagination and a break from boredom or screen time.\r\n\r\nNow a New York Times Best Illustrated Book of the Year and Bank Street College of Education Best Children\'s Book of the Year!\r\n\r\nAll I want to do on a rainy day like today is play my game. My mom says it’s a waste of time, but without my game, nothing is fun! On the other hand, maybe I’m wrong about that…\r\n\r\nWhile reading On a Magical Do-Nothing Day, one gets the sense that the illustrator became lost in her drawings, and as a reader, you\'ll want to do the same. Perfect for fans of picture books by Julie Morstad, Carson Ellis, Jon Klassen, and Tomi Ungerer.\r\n\r\n“Hands down, Beatrice Alemagna is my favorite contemporary illustrator,\" said the Caldecott Honor-winning illustrator of Last Stop on Market Street, Christian Robinson.\r\n\r\nOn a Magical Do-Nothing Day has been recognized with a Gold Medal from the Society of Illustrators. Don\'t miss this picture book that beautifully encourages unplugged exploration.</p>\r\n', '2021-10-21', 1, 320, 'Beatrice Alemagna'),
-(218, 'My Frirst Book About Allah', 207, 'book5.jpg', 15, '<p>This simple but beautiful book helps children understand who Allah is. It introduces some of His divine attributes: His Oneness, His infinite Power, Love and Mercy, and it ends with the promise He has made to those who believe in Him and make Him happy.\r\n\r\nIt is a book to be treasured by children, with large, colourful illustrations and carefully written text that children will understand and enjoy.</p>', '2020-07-07', 0, 0, 'Sara Khan'),
-(219, 'Here We Are', 368, 'book8.jpg', 18, '<p>Oliver Jeffers, arguably the most influential creator of picture books today, offers a rare personal look inside his own hopes and wishes for his child--and in doing so gifts children and parents everywhere with a gently sweet and humorous missive about our world and those who call it home.\r\n\r\nInsightfully sweet, with a gentle humor and poignancy, here is Oliver Jeffers\' user\'s guide to life on Earth. He created it specially for his son, yet with a universality that embraces all children and their parents. Be it a complex view of our planet\'s terrain (bumpy, sharp, wet), a deep look at our place in space (it’s big), or a guide to all of humanity (don’t be fooled, we are all people), Oliver\'s signature wit and humor combine with a value system of kindness and tolerance to create a must-have book for parents.</p>', '2021-06-26', 1, 299, 'Oliver Jeffers'),
-(325, 'I Want A Dog: My Opinion Essay', 115, 'book6.png', 18, '<p>Hurrah for Essays! All English composition writing lessons should be this much fun.\r\n\r\n\r\n\r\nWhen cousins Dennis and Mellie decide to get a dog, they consider carefully what breed would be best for each family. For example, Dennis wants a big dog, but Mellie wants tiny. He has no other pets, but she has other pets that a dog must get along with. They consider different dog personalities, family situations, and personal preferences. Dennis writes an opinion essay for his teacher, Mrs. Shirky. But will his essay convince his parents to get the dog of his dreams?\r\n\r\n\r\n\r\nThis story takes a popular subject—kids getting a pet—and adds dogs of all sizes and shapes: all writing lessons should be this much fun. In the end, it’s cousins and the dogs that keep a reader turning the page. What kind of dog will Dennis choose? Will Mellie want the same kind of dog?\r\n</p>', '2020-10-21', 0, 0, 'Darcy Pattison');
+(438, 'Không gia đình', 100000, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
+(439, 'Nếu chỉ còn 1 ngày để sống', 100000, 'form1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Nicola Yoon'),
+(441, 'Ông già và biển cả', 100000, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
+(442, 'Sherlocks Holmes', 100000, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80000, 'Sir Arthur Conan Doyle');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -265,13 +245,13 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `nhaxuatban`
 --
 ALTER TABLE `nhaxuatban`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=437;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
