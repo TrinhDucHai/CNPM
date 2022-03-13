@@ -12,7 +12,7 @@ include 'header.php';
                         if (!isset($_SESSION['txtus'])) // If session is not set then redirect to Login Page
                         {
                             printf(' <li class="nav-item"><a class="nav-link active" href="account.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-										<li class="nav-item"><a class="nav-link active" href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>');
+										<li class="nav-item"><a class="nav-link active" href="contact.php"></a></li>');
                         } else {
                             echo '<li class="nav-item" style:"color: lavender"><span class="glyphicon glyphicon-user"></span>';
                             echo '<span style="color:lavender"><b>' . $_SESSION['HoTen'] . '</b></span></li>';

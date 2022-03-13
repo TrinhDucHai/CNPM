@@ -15,12 +15,6 @@
               Home
             </a>
           </li>
-          <li class="nav-item dropdown text-center mx-2 mx-lg-1"><a href="#" class="nav-link-c dropdown-toggle" data-toggle="dropdown">
-            <div>
-              <i class="fas fa-book fa-lg mb-1"></i>
-            </div>
-            Publishing House
-          </a>
             <div class="dropdown-menu">
               <div class="dropdown-inner">
                 <ul>
@@ -49,14 +43,7 @@
                       Cart
                     </a>
                   </li>
-                  <li class="nav-item text-center mx-2 mx-lg-1">
-                    <a class="nav-link-c active" href="contact.php">
-                      <div>
-                        <i class="fas fa-envelope fa-lg mb-1"></i>
-                      </div>
-                      Contact
-                    </a>
-                  </li>
+                  <!--  -->
                 </ul>
               </div>
               <!-- Collapsible wrapper -->
