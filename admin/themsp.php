@@ -13,9 +13,8 @@ ob_start();
     <?php 
  include "aside.php";
 ?>
-      <!-- Content Wrapper. Contains page content -->
+
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             Thêm
@@ -26,16 +25,11 @@ ob_start();
         <!-- Main content -->
         <section class="content">
           <div class="row">
-            <!-- left column -->
-
-            <!-- right column -->
-  
             <div class="col-md-12">
-              <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Thêm Sách</h3>
-                </div><!-- /.box-header -->
+                </div>
                 <!-- form start -->
                 <form class="form-horizontal" method="POST" action="<?php include 'xulyluusp.php' ?>" enctype="multipart/form-data">
                   <div class="box-body">
@@ -67,7 +61,6 @@ ob_start();
                          $sql="SELECT ID,Ten from nhaxuatban where ID != 3";
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
-                          // output data of each row
                           while($row = $result->fetch_assoc()) {
                       ?>
                       <option value="<?php echo $row["ID"] ?>"><?php echo $row["Ten"] ?></option>
@@ -117,21 +110,17 @@ ob_start();
                   <div class="box-footer">
                    <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
                     <button type="submit" name="create" class="btn btn-info pull-right">Create</button>
-                  </div><!-- /.box-footer -->
+                  </div>
                 </form>
-              </div><!-- /.box -->
-              <!-- general form elements disabled -->
-            <!-- /.box -->
-            </div><!--/.col (right) -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+              </div>
+            </div>
+          </div> 
+        </section>
+      </div>
       <?php 
       include "footer.php";
      ?>
-  <?php 
- include "ControlSidebar.php";
-?>
+  
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
@@ -146,16 +135,15 @@ ob_start();
     <script src="dist/js/app.min.js"></script>
     <script>
       $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
+
         CKEDITOR.replace('editor1');
-        //bootstrap WYSIHTML5 - text editor
+
         $(".textarea").wysihtml5();
       });
     </script>
-    <!-- AdminLTE for demo purposes -->
+
     <script src="../../dist/js/demo.js"></script>
-    <!-- Lấy ngày hiện tại -->
+
 <script>
     var date = new Date();
 

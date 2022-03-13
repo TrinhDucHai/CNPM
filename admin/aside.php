@@ -8,12 +8,10 @@
             </div>
             <div class="pull-left info">
               <p style=" font-size: 2rem">Admin</p>
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+              <a href="#"><i class="fa fa-circle text-success"></i> Trực tuyến </a>
             </div>
           </div>
-          <!-- search form -->
-          <!-- /.search form -->
-          <!-- sidebar menu: : style can be found in sidebar.less -->
+
           <ul class="sidebar-menu">
             <li class="header"></li>
             <li class="active treeview">
@@ -40,5 +38,5 @@
               </ul>
             </li>
         </section>
-        <!-- /.sidebar -->
+
       </aside>

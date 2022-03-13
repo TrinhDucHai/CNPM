@@ -13,7 +13,6 @@ ob_start();
  include "aside.php";
 ?>
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <?php
    require '../inc/config.php';
    //lay san pham theo id
@@ -38,16 +37,13 @@ $row = $result->fetch_assoc();
         <!-- Main content -->
         <section class="content">
           <div class="row">
-            <!-- left column -->
 
-            <!-- right column -->
             <div class="col-md-12">
               <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Sửa Sách</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
+                </div>
                 <form class="form-horizontal"  method="POST" action="<?php include 'xulysuasp.php'?>" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
@@ -87,7 +83,7 @@ $row = $result->fetch_assoc();
                          $sqls="SELECT ID,Ten from nhaxuatban where ID !=".$row["Manhasx"] ;
                          $results = $conn->query($sqls); 
                          if ($results->num_rows > 0) {
-                          // output data of each row
+
                           while($rows = $results->fetch_assoc()) {
                       ?>
                         <option value="<?php echo $rows["ID"] ?>"><?php echo $rows["Ten"] ?></option>
@@ -161,24 +157,22 @@ $row = $result->fetch_assoc();
                   <div class="box-footer">
                   <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
                     <button type="submit" name="Edit" class="btn btn-info pull-right">Edit</button>
-                    </div><!-- /.box-body -->
-                  </div><!-- /.box-footer -->
+                    </div>
+                  </div>
                 </form>
-              </div><!-- /.box -->
-              <!-- general form elements disabled -->
-            <!-- /.box -->
-            </div><!--/.col (right) -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
+              </div>
+            </div>
+          </div>  
+        </section>
            
       <?php 
       include "footer.php";
      ?>
 
-      </div><!-- /.content-wrapper -->
+      </div>
   
       <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
+    </div>
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
@@ -191,14 +185,13 @@ $row = $result->fetch_assoc();
     <script src="dist/js/app.min.js"></script>
     <script>
       $(function () {
-        // Replace the <textarea id="editor1"> with a CKEditor
-        // instance, using default configuration.
+
         CKEDITOR.replace('editor1');
-        //bootstrap WYSIHTML5 - text editor
+
         $(".textarea").wysihtml5();
       });
     </script>
-    <!-- AdminLTE for demo purposes -->
+
     <script src="dist/js/demo.js"></script>
   </body>
 </html>

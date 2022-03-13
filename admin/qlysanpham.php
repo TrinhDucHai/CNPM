@@ -1,5 +1,3 @@
-
-
 <?php 
  include "head.php";
  
@@ -12,10 +10,7 @@
     <?php 
  include "aside.php";
 ?>
-
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             Quản lý
@@ -32,7 +27,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Quản lý Sách</h3>
-                </div><!-- /.box-header -->
+                </div>
        
                 <div class="box-body">
         
@@ -44,7 +39,7 @@
                         <th>Hình ảnh</th>
                         <th>Tác giả</th>
                         <th>Nhà xuất bản</th>
-                        <th>Tác vụ</th>
+                        <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>  
@@ -55,7 +50,6 @@
                          LEFT JOIN nhaxuatban n on n.ID = s.Manhasx   ORDER BY s.Ten  ";
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
-                          // output data of each row
                           while($row = $result->fetch_assoc()) {
                       ?>       
                         <tr>           
@@ -81,26 +75,20 @@
                 <a class="btn btn-primary "href="themsp.php">
                 Thêm Sách</a>
   </div>
-                </div><!-- /.box-body -->
+                </div>
              
              
-              </div><!-- /.box -->
+              </div>
             
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+            </div>
+          </div>
         </section>
-        <!-- /.content -->
-      </div><!-- /.content-wrapper -->
+
+      </div>
       <?php 
       include "footer.php";
      ?>
-  <?php 
- include "ControlSidebar.php";
-?>
-      <!-- Control Sidebar -->
-  
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
+
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 

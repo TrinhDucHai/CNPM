@@ -6,7 +6,7 @@ ob_start();
 ?>
 <?php
  require "loginAdmin.php";
-      if(!isset($_SESSION['tendangnhap'] )) // If session is not set then redirect to Login Page
+      if(!isset($_SESSION['tendangnhap'] )) 
        {
            header("Location:login.php");  
        }
@@ -18,7 +18,7 @@ ob_start();
     <?php 
  include "Header.php";
 ?>
-      <!-- Left side column. contains the logo and sidebar -->
+      
       <?php 
  include "aside.php";
 ?>
@@ -29,7 +29,7 @@ ob_start();
         <section class="content-header">
           <h1 style="color: #f3906c">
            Trang quản trị
-            <small style="color: #fcc39b">Admin</small>
+            <small style="color: #fcc39b">Quản trị viên</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#" style="color: #fcc39b"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -67,20 +67,7 @@ ob_start();
                 <a href="qlynhasx.php" class="small-box-footer">Xem danh Sách <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-red">
-                <div class="inner">
-                <h3>Quản lý</h3>
-                  <p>Dịch vụ</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-television"></i>
-                </div>
-                <a href="quanlydv.php" class="small-box-footer">Xem danh Sách <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-     
+ 
             <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-yellow">
@@ -116,12 +103,6 @@ ob_start();
  include "footer.php";
 ?>
 
-      <!-- Control Sidebar -->
-      <?php 
- include "ControlSidebar.php";
-?>
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 

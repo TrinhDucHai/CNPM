@@ -34,17 +34,11 @@ $row = $result->fetch_assoc();
         <!-- Main content -->
         <section class="content">
           <div class="row">
-            <!-- left column -->
-
-            <!-- right column -->
-  
             <div class="col-md-12" >
-              <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Chi tiết Sách</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
+                </div>
                 <form class="form-horizontal" >
                   <div class="box-body" >
                     <div class="form-group">
@@ -56,7 +50,7 @@ $row = $result->fetch_assoc();
                     <div class="form-group">
                       <label  class="col-sm-2">Hình ảnh:</label>  
                       <div class="col-sm-2">
-                      <p><img src="../images/<?php echo $row["HinhAnh"]?>" style="width:300px;height:300px"></p>
+                      <p><img src="../images/<?php echo $row["HinhAnh"]?>" style="width:300px;height:400px"></p>
                       </div>        
                     </div>
                     <div class="form-group">
@@ -121,13 +115,11 @@ $row = $result->fetch_assoc();
                   <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
                   </div><!-- /.box-footer -->
                 </form>
-              </div><!-- /.box -->
-              <!-- general form elements disabled -->
-            <!-- /.box -->
-            </div><!--/.col (right) -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+              </div>
+            </div>
+          </div> 
+        </section>
+      </div>
       <?php 
       include "footer.php";
      ?>
@@ -156,7 +148,6 @@ $row = $result->fetch_assoc();
         $(".textarea").wysihtml5();
       });
     </script>
-    <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
   </body>
 </html>
