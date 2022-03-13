@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 12, 2022 lúc 04:13 AM
+-- Thời gian đã tạo: Th3 13, 2022 lúc 02:31 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -33,29 +33,8 @@ CREATE TABLE `chitiethoadon` (
   `masp` bigint(20) NOT NULL,
   `soluong` int(11) NOT NULL,
   `dongia` float NOT NULL,
-  `thanhtien` decimal(9,2) NOT NULL,
-  `madv` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+  `thanhtien` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `dichvu`
---
-
-CREATE TABLE `dichvu` (
-  `madv` bigint(20) NOT NULL,
-  `tendv` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `gia` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `dichvu`
---
-
-INSERT INTO `dichvu` (`madv`, `tendv`, `gia`) VALUES
-(15, 'Bọc sách', 10),
-(16, 'Gói quà tặng', 20);
 
 -- --------------------------------------------------------
 
@@ -176,12 +155,6 @@ ALTER TABLE `chitiethoadon`
   ADD KEY `chitiethoadon` (`sodh`);
 
 --
--- Chỉ mục cho bảng `dichvu`
---
-ALTER TABLE `dichvu`
-  ADD PRIMARY KEY (`madv`);
-
---
 -- Chỉ mục cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
@@ -228,12 +201,6 @@ ALTER TABLE `sanpham` ADD FULLTEXT KEY `Ten_2` (`Ten`);
 --
 ALTER TABLE `chitiethoadon`
   MODIFY `id_chi_tiet_hoadon` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
-
---
--- AUTO_INCREMENT cho bảng `dichvu`
---
-ALTER TABLE `dichvu`
-  MODIFY `madv` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `hoadon`
