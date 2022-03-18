@@ -67,7 +67,7 @@ $row = $result->fetch_assoc();
                       <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">Ảnh hiện tại:   </label>
                         <div class="col-sm-10">
-                      <img src="../images/<?php echo $row["HinhAnh"]?>" style="width:300px;height:300px">
+                      <img src="../images/<?php echo $row["HinhAnh"]?>" style="width:300px;height:400px">
                         </div>
                       </div>
                       <input type="hidden" class="form-control" name="anh" value="<?php echo $row["HinhAnh"] ?>">
