@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION['HoTen'] = $row["HoTen"];
 			$_SESSION['email'] = $row["email"];
 			$_SESSION['dienthoai'] = $row["DienThoai"];
-			header('Location: cart.php');
+			header('Location: index.php');
 			$row = $result->fetch_assoc();
 		}
 	} else {
@@ -40,7 +40,7 @@ $kqdk = "";
 $repass = "";
 
 if (isset($_POST['dangky'])) {
-	require 'inc/config.php';
+	require 'inc/config.php';//gọi đến config
 	$name  = $_POST['fullname'];
 	$email = $_POST['email'];
 	$dt = $_POST['phone'];
