@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 13, 2022 lúc 02:31 AM
+-- Thời gian đã tạo: Th3 18, 2022 lúc 06:28 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -52,6 +52,14 @@ CREATE TABLE `hoadon` (
   `hinhthucthanhtoan` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `thanhtien` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hoadon`
+--
+
+INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dienthoai`, `hinhthucthanhtoan`, `thanhtien`) VALUES
+(130, 'hai@gmail.com', '2022-03-13', 'hai', 'dqdq', '', 'ATM', '0.00'),
+(131, 'hai@gmail.com', '2022-03-13', 'hai', 'a', '', 'ATM', '0.00');
 
 -- --------------------------------------------------------
 
@@ -138,10 +146,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `date`, `KhuyenMai`, `giakhuyenmai`, `tacgia`) VALUES
-(438, 'Không gia đình', 100000, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
-(439, 'Nếu chỉ còn 1 ngày để sống', 100000, 'form1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Nicola Yoon'),
-(441, 'Ông già và biển cả', 100000, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
-(442, 'Sherlocks Holmes', 100000, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80000, 'Sir Arthur Conan Doyle');
+(438, 'Không gia đình', 100, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 0, 0, 'Hecto Marlot'),
+(439, 'Nếu chỉ còn 1 ngày để sống', 200, 'form1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 160, 'Nicola Yoon'),
+(441, 'Ông già và biển cả', 120, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 0, 0, 'Hecto Marlot'),
+(442, 'Sherlocks Holmes', 100, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80, 'Sir Arthur Conan Doyle');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -152,13 +160,15 @@ INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `date`,
 --
 ALTER TABLE `chitiethoadon`
   ADD PRIMARY KEY (`id_chi_tiet_hoadon`),
-  ADD KEY `chitiethoadon` (`sodh`);
+  ADD KEY `chitiethoadon` (`sodh`),
+  ADD KEY `masp` (`masp`);
 
 --
 -- Chỉ mục cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  ADD PRIMARY KEY (`sodh`);
+  ADD PRIMARY KEY (`sodh`),
+  ADD KEY `emailkh` (`emailkh`);
 
 --
 -- Chỉ mục cho bảng `loginadmin`
@@ -206,7 +216,7 @@ ALTER TABLE `chitiethoadon`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `sodh` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `sodh` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT cho bảng `nhaxuatban`
@@ -218,7 +228,7 @@ ALTER TABLE `nhaxuatban`
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=443;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -228,7 +238,14 @@ ALTER TABLE `sanpham`
 -- Các ràng buộc cho bảng `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
-  ADD CONSTRAINT `chitiethoadon` FOREIGN KEY (`sodh`) REFERENCES `hoadon` (`sodh`) ON DELETE CASCADE;
+  ADD CONSTRAINT `chitiethoadon` FOREIGN KEY (`sodh`) REFERENCES `hoadon` (`sodh`) ON DELETE CASCADE,
+  ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`ID`);
+
+--
+-- Các ràng buộc cho bảng `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`emailkh`) REFERENCES `loginuser` (`email`);
 
 --
 -- Các ràng buộc cho bảng `sanpham`

@@ -123,9 +123,7 @@ $row = $result->fetch_assoc();
       <?php 
       include "footer.php";
      ?>
-  <?php 
- include "ControlSidebar.php";
-?>
+  
       <div class="control-sidebar-bg">
       </div>
     </div><!-- ./wrapper -->
