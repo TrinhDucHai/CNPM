@@ -1,4 +1,6 @@
 <?php
+if(!isset($_SESSION)) 
+{
 session_start();
 $kq = "";
 if(isset($_POST['dnhapadmin']))
@@ -21,6 +23,6 @@ if(isset($_POST['dnhapadmin']))
     {
         $kq ="Thông tin không đúng vui lòng kiềm tra lại";
     }
-
+}
 }
 ?>
