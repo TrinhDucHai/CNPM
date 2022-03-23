@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 18, 2022 lúc 06:28 AM
+-- Thời gian đã tạo: Th3 23, 2022 lúc 02:22 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `ban_sach`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `admin`
+--
+
+CREATE TABLE `admin` (
+  `tendangnhap` varchar(100) NOT NULL,
+  `matkhau` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `admin`
+--
+
+INSERT INTO `admin` (`tendangnhap`, `matkhau`) VALUES
+('admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -59,50 +77,8 @@ CREATE TABLE `hoadon` (
 
 INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dienthoai`, `hinhthucthanhtoan`, `thanhtien`) VALUES
 (130, 'hai@gmail.com', '2022-03-13', 'hai', 'dqdq', '', 'ATM', '0.00'),
-(131, 'hai@gmail.com', '2022-03-13', 'hai', 'a', '', 'ATM', '0.00');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `loginadmin`
---
-
-CREATE TABLE `loginadmin` (
-  `tendangnhap` varchar(100) NOT NULL,
-  `matkhau` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Đang đổ dữ liệu cho bảng `loginadmin`
---
-
-INSERT INTO `loginadmin` (`tendangnhap`, `matkhau`) VALUES
-('admin', 'admin');
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `loginuser`
---
-
-CREATE TABLE `loginuser` (
-  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `matkhau` int(200) NOT NULL,
-  `HoTen` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `DienThoai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `loginuser`
---
-
-INSERT INTO `loginuser` (`email`, `matkhau`, `HoTen`, `DienThoai`) VALUES
-('chien@gmail.com', 123, 'chien', ''),
-('duong@gmail.com', 123, 'duong', ''),
-('hai@gmail.com', 123, 'hai', ''),
-('hieu@gmail.com', 123, 'hieu', ''),
-('phong@gmail.com', 123, 'phong', ''),
-('truong@gmail.com', 123, 'truong', '136888999');
+(131, 'hai@gmail.com', '2022-03-13', 'hai', 'a', '', 'ATM', '0.00'),
+(132, 'hai@gmail.com', '2022-03-19', 'hai', 'a', '', 'Live', '0.00');
 
 -- --------------------------------------------------------
 
@@ -120,7 +96,8 @@ CREATE TABLE `nhaxuatban` (
 --
 
 INSERT INTO `nhaxuatban` (`ID`, `Ten`) VALUES
-(19, 'NXB Kim Đồng');
+(19, 'NXB Kim Đồng'),
+(21, 'Red Velvet');
 
 -- --------------------------------------------------------
 
@@ -146,14 +123,48 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `date`, `KhuyenMai`, `giakhuyenmai`, `tacgia`) VALUES
-(438, 'Không gia đình', 100, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 0, 0, 'Hecto Marlot'),
-(439, 'Nếu chỉ còn 1 ngày để sống', 200, 'form1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 160, 'Nicola Yoon'),
-(441, 'Ông già và biển cả', 120, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 0, 0, 'Hecto Marlot'),
-(442, 'Sherlocks Holmes', 100, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80, 'Sir Arthur Conan Doyle');
+(438, 'Không gia đình', 100000, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
+(439, 'Nếu chỉ còn 1 ngày để sống', 100000, 'book2.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Nicola Yoon'),
+(441, 'Ông già và biển cả', 100000, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
+(442, 'Sherlocks Holmes', 100000, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80000, 'Sir Arthur Conan Doyle');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `user`
+--
+
+CREATE TABLE `user` (
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `matkhau` int(200) NOT NULL,
+  `HoTen` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `DienThoai` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`email`, `matkhau`, `HoTen`, `DienThoai`) VALUES
+('aa@gmail.com', 123, 'aa', '1'),
+('chien@gmail.com', 123, 'chien', ''),
+('duong@gmail.com', 123, 'duong', ''),
+('hai@gmail.com', 123, 'hai', ''),
+('hieu@gmail.com', 123, 'hieu', ''),
+('Irene@gmail.com', 123, 'Irene', '1'),
+('phong@gmail.com', 123, 'phong', ''),
+('truong@gmail.com', 123, 'truong', '136888999'),
+('Yuri@gmail.com', 123, 'Yuri', '1');
 
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`tendangnhap`);
 
 --
 -- Chỉ mục cho bảng `chitiethoadon`
@@ -169,18 +180,6 @@ ALTER TABLE `chitiethoadon`
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`sodh`),
   ADD KEY `emailkh` (`emailkh`);
-
---
--- Chỉ mục cho bảng `loginadmin`
---
-ALTER TABLE `loginadmin`
-  ADD PRIMARY KEY (`tendangnhap`);
-
---
--- Chỉ mục cho bảng `loginuser`
---
-ALTER TABLE `loginuser`
-  ADD PRIMARY KEY (`email`);
 
 --
 -- Chỉ mục cho bảng `nhaxuatban`
@@ -203,6 +202,12 @@ ALTER TABLE `sanpham`
 ALTER TABLE `sanpham` ADD FULLTEXT KEY `Ten_2` (`Ten`);
 
 --
+-- Chỉ mục cho bảng `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`email`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -216,19 +221,19 @@ ALTER TABLE `chitiethoadon`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `sodh` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
+  MODIFY `sodh` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT cho bảng `nhaxuatban`
 --
 ALTER TABLE `nhaxuatban`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=445;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=449;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -245,7 +250,7 @@ ALTER TABLE `chitiethoadon`
 -- Các ràng buộc cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`emailkh`) REFERENCES `loginuser` (`email`);
+  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`emailkh`) REFERENCES `user` (`email`);
 
 --
 -- Các ràng buộc cho bảng `sanpham`

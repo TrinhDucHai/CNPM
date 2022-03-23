@@ -78,7 +78,7 @@ body{
 	<br>
 	<form action="<?php include "loginAdmin.php" ?>" method="post">
 		<center>
-			<!-- <div id="circle"> -->
+			
 				<h2 id="blinking" style="color: lavender">Please Login Here</h2>
 				<div id="box">
 					<input type="text" name="txtdangnhap" id="in" placeholder="Tên đăng nhập" style="margin-top: 50px"><br>
@@ -86,14 +86,12 @@ body{
 					<button type="submit" name="dnhapadmin"class="btn" style="background-color: black; color: #fcc39b; margin-top: 50px">Đăng nhập</button>
 					<p style="color:red"><?php echo  $kq ?></p>
 				</div>
-			<!-- </div> -->
+			
 		</center>
 	</form>
 	<br><br><br><br>
 	<script src="script.js"></script>
-	<!-- <hr>
-		<p id="footer">Misfar ©</p>
-	<hr> -->
+	
 	<footer>
 		<hr>
 			<p id="copy" style="color: black; font-size: 2rem"><b>61TH3 Nhóm 3</b></p>

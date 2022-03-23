@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
 	require 'inc/config.php';
 	$tk = $_POST['txtus'];
 	$mk = $_POST['txtem'];
-	$sql = "SELECT * FROM loginuser  where email = '$tk'  and matkhau = '$mk'  ";
+	$sql = "SELECT * FROM user  where email = '$tk'  and matkhau = '$mk'  ";
 	$result = $conn->query($sql);
 	// echo  $mk;
 	if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@ if (isset($_POST['dangky'])) {
 	if ($repass != $mk) {
 		$kqdk = "Mật khẩu nhập lại không chính xác";
 	} else {
-		$sql = "INSERT INTO  loginuser (email,matkhau,hoten,DienThoai) 
+		$sql = "INSERT INTO  user (email,matkhau,hoten,DienThoai) 
         VALUES ('$email','$mk' ,'$name','$dt') ";
 		// echo  $mk;
 		if (mysqli_query($conn, $sql)) {

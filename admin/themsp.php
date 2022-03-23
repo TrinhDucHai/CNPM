@@ -58,7 +58,7 @@ ob_start();
                     <option selected="selected" value="3">Chọn Nhà xuất bản</option>
                      <?php
                          require '../inc/config.php';
-                         $sql="SELECT ID,Ten from nhaxuatban where ID != 3";
+                         $sql="SELECT ID,Ten from nhaxuatban";
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
                           while($row = $result->fetch_assoc()) {
@@ -108,8 +108,8 @@ ob_start();
                   </div>                 
      
                   <div class="box-footer">
-                   <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
-                    <button type="submit" name="create" class="btn btn-info pull-right">Create</button>
+                   <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Hủy</button></a>
+                    <button type="submit" name="create" class="btn btn-info pull-right">Lưu lại</button>
                   </div>
                 </form>
               </div>

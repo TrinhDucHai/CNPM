@@ -20,7 +20,7 @@ if(isset($_POST['dangky']))
     }
     else
     {
-        $sql="INSERT INTO  loginuser (email,matkhau,hoten,DienThoai) 
+        $sql="INSERT INTO  user (email,matkhau,hoten,DienThoai) 
         VALUES ('$email','$mk' ,'$name','$dt') ";
         // echo  $mk;
         if (mysqli_query($conn, $sql)) {

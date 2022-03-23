@@ -15,7 +15,7 @@ if(isset($_POST['create']))
     $mota = $_POST['editor1'];
     $sql="INSERT INTO  sanpham (Ten,HinhAnh,Manhasx,date,Gia,KhuyenMai,Mota,giakhuyenmai,tacgia) 
     VALUES ('$name','$hinhanh' ,'$manhasx','$ngay',' $gia','$khuyenmai','$mota','$giakhuyenmai','$tacgia') ";
-    // echo  $mk;
+    
     if (mysqli_query($conn, $sql)) {
         header('Location: qlysanpham.php');
 

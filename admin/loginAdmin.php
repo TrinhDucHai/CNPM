@@ -7,7 +7,7 @@ if(isset($_POST['dnhapadmin']))
     require '../inc/config.php';
     $tk = $_POST['txtdangnhap'];
     $mk = $_POST['txtmatkhau'];
-    $sql="SELECT * FROM loginadmin  where tendangnhap = '$tk'  and matkhau = '$mk'  ";
+    $sql="SELECT * FROM admin  where tendangnhap = '$tk'  and matkhau = '$mk'  ";
     $result = $conn->query($sql);
     // echo  $mk;
     if($result->num_rows > 0){
