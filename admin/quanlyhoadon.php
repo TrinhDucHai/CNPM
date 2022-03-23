@@ -42,7 +42,7 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th> 
-<<<<<<< HEAD
+
                         <th>Ngày giao hàng </th>                
 =======
                         <th>Ngày giao hàng </th>       
@@ -56,7 +56,7 @@
                     <?php
                          require '../inc/config.php';
                          $sql="SELECT h.sodh,soluong,dongia,h.thanhtien
-<<<<<<< HEAD
+
                          ,s.Ten as tensanpham,ngaygiao
 =======
                          ,s.Ten as tensanpham,ngaygiao,madv
@@ -76,7 +76,7 @@
                         <td><?php  echo $row["soluong"] ?></td>
                         <td><?php  echo $row["dongia"] ?>.000 VNĐ</td>
                         <td><?php  echo $row["thanhtien"] ?>0 VNĐ</td>  
-<<<<<<< HEAD
+
                         <td><?php 
                         //chuyen ngaygiao thanh kieu  ngay thang nam
                         $date=date_create($row["ngaygiao"]);
@@ -148,7 +148,7 @@
       <?php 
       include "footer.php";
      ?>                 			
-<<<<<<< HEAD
+
   
 =======
   <?php 
@@ -190,7 +190,7 @@
         });
       });
     </script>
-<<<<<<< HEAD
+
 =======
     <script>
 function myFunction() {
