@@ -1,3 +1,5 @@
+<!--Trinh Duc Hai-->
+
 <?php 
 include "head.php";
 
@@ -112,7 +114,7 @@ $row = $result->fetch_assoc();
                   </div>
                   </div><!-- /.box-body -->
                   <div class="box-footer">
-                  <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
+                  <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Quay lại</button></a>
                   </div><!-- /.box-footer -->
                 </form>
               </div>

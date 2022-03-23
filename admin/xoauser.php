@@ -4,7 +4,7 @@
     $email = $_GET['email'];
 
     // sql to delete a record
-    $sql = "DELETE FROM user WHERE email=".$email;
+    $sql = "DELETE FROM loginuser WHERE email=".$email;
 
     if ($conn->query($sql) === TRUE) {
         header('Location: qlykhachhang.php');
@@ -27,6 +27,10 @@ function myFunction() {
     $email = $_GET['email'];
 
     $sql = "DELETE FROM user WHERE email=".$email;
+
+
+    $sql = "DELETE FROM loginuser WHERE email=".$email;
+
 
     if ($conn->query($sql) === TRUE) {
         header('Location: qlykhachhang.php');

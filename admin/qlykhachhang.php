@@ -54,13 +54,16 @@
                         <td ><?php echo $row["email"] ?></td>
                         <td><?php echo $row["HoTen"] ?></td>
                         <td><?php echo $row["DienThoai"] ?></td>
-                        <td><a class="btn btn-primary" href="suakhachhang.php?email=<?php echo $row["email"] ?>">
+                        <td><a class="btn btn-primary" href="suauser.php?email=<?php echo $row["email"] ?>">
                           <i class="fa fa-edit fa-lg"<acronym title="Chỉnh sửa"></acronym></i>
                        </a>
                         <a class="btn btn-danger" onclick="return confirm('Bạn có thật sự muốn xóa không ?');" href="xoauser.php?email=<?php  echo $row["email"]  ?>" onclick="myFunction()">
                         <i class="fa fa-trash-o fa-lg" <acronym title="Xóa">
                          </acronym></i></a></td>
                           </tr>
+
+                        </td>        
+                        </tr>
                         <?php
                           }
                         }
@@ -74,6 +77,7 @@
                     Thêm Khách hàng</a>
                 </div>         
                 </div>
+                </div><!-- /.box-body -->
              
              
               </div>
@@ -85,9 +89,6 @@
       <?php 
       include "footer.php";
      ?>
-<<<<<<< HEAD
-
-=======
   <?php 
  include "ControlSidebar.php";
 ?>
@@ -95,7 +96,6 @@
   
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->
->>>
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
