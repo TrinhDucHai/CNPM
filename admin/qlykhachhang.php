@@ -71,6 +71,10 @@
                       
                     </tbody>                   
                   </table>
+                  <div  style="text-align:left">
+                <a class="btn btn-primary "href="themkhachhang.php">
+                    Thêm Khách hàng</a>
+                </div>  
                   
                 </div><!-- /.box-body -->
              
