@@ -55,7 +55,7 @@
 <<<<<<< HEAD
                          $sql="SELECT email,HoTen,DienThoai from user Order by HoTen  ";
 =======
-                         $sql="SELECT email,HoTen,DienThoai from loginuser Order by HoTen  ";
+                         $sql="SELECT email,HoTen,DienThoai from user Order by HoTen  ";
 >>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
