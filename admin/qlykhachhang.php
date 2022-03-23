@@ -1,3 +1,5 @@
+
+
 <?php 
  include "head.php";
  
@@ -51,18 +53,15 @@
                           while($row = $result->fetch_assoc()) {
                       ?>       
                         <tr>           
-                        <td ><?php echo $row["email"] ?></td>
+                        <td><?php echo $row["email"] ?></td>
                         <td><?php echo $row["HoTen"] ?></td>
                         <td><?php echo $row["DienThoai"] ?></td>
                         <td><a class="btn btn-primary" href="suauser.php?email=<?php echo $row["email"] ?>">
-                          <i class="fa fa-edit fa-lg"<acronym title="Chỉnh sửa"></acronym></i>
-                       </a>
+                    <i class="fa fa-edit fa-lg"<acronym title="Chỉnh sửa"></acronym></i>
+                       </a> 
                         <a class="btn btn-danger" onclick="return confirm('Bạn có thật sự muốn xóa không ?');" href="xoauser.php?email=<?php  echo $row["email"]  ?>" onclick="myFunction()">
                         <i class="fa fa-trash-o fa-lg" <acronym title="Xóa">
-                         </acronym></i></a></td>
-                          </tr>
-
-                        </td>        
+                         </acronym></i></a></td>      
                         </tr>
                         <?php
                           }
@@ -72,20 +71,17 @@
                       
                     </tbody>                   
                   </table>
-                  <div  style="text-align:left">
-                <a class="btn btn-primary "href="themkhachhang.php">
-                    Thêm Khách hàng</a>
-                </div>         
-                </div>
+                  
                 </div><!-- /.box-body -->
              
              
-              </div>
+              </div><!-- /.box -->
             
-            </div>
-          </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
         </section>
-      </div>
+        <!-- /.content -->
+      </div><!-- /.content-wrapper -->
       <?php 
       include "footer.php";
      ?>
@@ -127,5 +123,10 @@
         });
       });
     </script>
+    <script>
+function myFunction() {
+    alert("Xóa thành công");
+}
+</script>
   </body>
 </html>
