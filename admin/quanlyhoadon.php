@@ -42,7 +42,13 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th> 
+<<<<<<< HEAD
                         <th>Ngày giao hàng </th>                
+=======
+                        <th>Ngày giao hàng </th>       
+                        <th>Dịch vụ</th>   
+                                   
+>>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                       </tr>
                     </thead>
                     <tbody>  
@@ -50,7 +56,11 @@
                     <?php
                          require '../inc/config.php';
                          $sql="SELECT h.sodh,soluong,dongia,h.thanhtien
+<<<<<<< HEAD
                          ,s.Ten as tensanpham,ngaygiao
+=======
+                         ,s.Ten as tensanpham,ngaygiao,madv
+>>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                          from chitiethoadon c 
                          LEFT JOIN sanpham s on s.ID= c.masp
                          LEFT JOIN hoadon h on h.sodh= c.sodh Order by tensanpham  ";
@@ -66,6 +76,7 @@
                         <td><?php  echo $row["soluong"] ?></td>
                         <td><?php  echo $row["dongia"] ?>.000 VNĐ</td>
                         <td><?php  echo $row["thanhtien"] ?>0 VNĐ</td>  
+<<<<<<< HEAD
                         <td><?php 
                         //chuyen ngaygiao thanh kieu  ngay thang nam
                         $date=date_create($row["ngaygiao"]);
@@ -77,6 +88,41 @@
                         }
                          ?>
                         </td>        
+=======
+                        <td>
+                        <?php 
+                        //chuyen ngaygiao thanh kieu  ngay thang nam
+                        $date=date_create($row["ngaygiao"]);
+                        echo date_format($date,"d/m/Y");
+                         ?></td> 
+                         <td></td>  
+                         
+                        <td>
+                          
+                        <?php
+                        if($row["madv"]!= "")
+                        {
+                         ?>
+                        <?php
+                        $ma= $row["madv"];
+                        // $madv= implode(",",$ma);
+                        $sql="SELECT tendv from dichvu where madv  in ($ma)";
+                        $results = $conn->query($sql);
+                        if ($results->num_rows > 0) {
+                          // output data of each row
+                          while($s = $results->fetch_assoc()) {
+                         // output data of each row
+                           echo "<p>".$s["tendv"] ."</p>";                      
+                        }
+                      }
+                        ?>
+                        <?php
+                        }
+                         ?>
+                         
+                        </td>  
+                              
+>>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                         </tr>
            
                         <?php
@@ -102,7 +148,17 @@
       <?php 
       include "footer.php";
      ?>                 			
+<<<<<<< HEAD
   
+=======
+  <?php 
+ include "ControlSidebar.php";
+?>
+      <!-- Control Sidebar -->
+  
+      <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+>>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 
@@ -134,5 +190,13 @@
         });
       });
     </script>
+<<<<<<< HEAD
+=======
+    <script>
+function myFunction() {
+    alert("Xóa thành công");
+}
+</script>
+>>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
   </body>
 </html>
