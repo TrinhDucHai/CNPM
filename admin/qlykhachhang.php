@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
+<!--Trinh Duc Hai-->
 <?php 
  include "head.php";
  
@@ -43,20 +39,12 @@
                         <th>Email</th>
                         <th>Họ tên</th>
                         <th>Số điện thoại</th>
-<<<<<<< HEAD
-=======
-                        <th>Tác Vụ</th>
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                       </tr>
                     </thead>
                     <tbody>  
                     <?php
                          require '../inc/config.php';
-<<<<<<< HEAD
                          $sql="SELECT email,HoTen,DienThoai from user Order by HoTen  ";
-=======
-                         $sql="SELECT email,HoTen,DienThoai from user Order by HoTen  ";
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
                           // output data of each row
@@ -65,21 +53,14 @@
                         <tr>           
                         <td ><?php echo $row["email"] ?></td>
                         <td><?php echo $row["HoTen"] ?></td>
-<<<<<<< HEAD
                         <td><?php echo $row["DienThoai"] ?></td>
-                        <td><a class="btn btn-primary" href="suakhachhang.php?email=<?php echo $row["email"] ?>">
+                        <td><a class="btn btn-primary" href="suauser.php?email=<?php echo $row["email"] ?>">
                           <i class="fa fa-edit fa-lg"<acronym title="Chỉnh sửa"></acronym></i>
                        </a>
-                        <a class="btn btn-danger" onclick="return confirm('Bạn có thật sự muốn xóa không ?');" href="xoakhachhang.php?email=<?php  echo $row["email"]  ?>" onclick="myFunction()">
+                        <a class="btn btn-danger" onclick="return confirm('Bạn có thật sự muốn xóa không ?');" href="xoauser.php?email=<?php  echo $row["email"]  ?>" onclick="myFunction()">
                         <i class="fa fa-trash-o fa-lg" <acronym title="Xóa">
                          </acronym></i></a></td>
                         </td>        
-=======
-                        <td><?php echo $row["DienThoai"] ?></td>  
-                        <td><a class="btn btn-danger" onclick="return confirm('Bạn có thật sự muốn xóa không ?');" href="xoauser.php?id=<?php  echo $row["email"]  ?>" onclick="myFunction()">
-                        <i class="fa fa-trash-o fa-lg" <acronym title="Xóa">
-                         </acronym></i></a></td>      
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                         </tr>
                         <?php
                           }
@@ -89,14 +70,10 @@
                       
                     </tbody>                   
                   </table>
-<<<<<<< HEAD
                   <div  style="text-align:left">
                 <a class="btn btn-primary "href="themkhachhang.php">
                     Thêm Khách hàng</a>
                 </div>         
-=======
-                  
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
                 </div><!-- /.box-body -->
              
              
@@ -110,17 +87,7 @@
       <?php 
       include "footer.php";
      ?>
-<<<<<<< HEAD
 
-=======
-  <?php 
- include "ControlSidebar.php";
-?>
-      <!-- Control Sidebar -->
-  
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
->>>>>>> 0396f2fa91151088037834d86aa8e78b857d6af3
       <div class="control-sidebar-bg"></div>
     </div><!-- ./wrapper -->
 

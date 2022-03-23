@@ -1,5 +1,17 @@
+<!--Trinh Duc Hai-->
 <?php
 ob_start();
+?>
+<?php 
+ include "head.php";
+?>
+<?php
+ require "loginAdmin.php";
+      if(!isset($_SESSION['tendangnhap'] )) 
+       {
+           header("Location:login.php");  
+       }
+
 ?>
 <header class="main-header" >
         <!-- Logo -->
