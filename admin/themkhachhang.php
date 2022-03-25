@@ -13,31 +13,21 @@ include "Header.php";
    <?php 
 include "aside.php";
 ?>
-
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             Thêm
             <small>Khách hàng</small>
           </h1>
         </section>
-
-        <!-- Main content -->
         <section class="content">
           <div class="row">
-            <!-- left column -->
-
-            <!-- right column -->
-  
             <div class="col-md-12">
-              <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Thêm Khách hàng</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
+                </div>
+
                 <form class="form-horizontal" method="POST" action="<?php include 'xulyluukhachhang.php' ?>">
                   <div class="box-body">
                     <div class="form-group">
@@ -101,7 +91,7 @@ include "aside.php";
         $(".textarea").wysihtml5();
       });
     </script>
-    <!-- AdminLTE for demo purposes -->
+
     <script src="../../dist/js/demo.js"></script>
   </body>
 </html>

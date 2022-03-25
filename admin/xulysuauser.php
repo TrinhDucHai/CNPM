@@ -5,7 +5,6 @@
     $hoten = $_POST['hoten'];
     $dienthoai = $_POST['dienthoai'];
     $email = $_GET['email'];
-    
         $sql = "UPDATE user SET HoTen='$hoten', DienThoai='$dienthoai' 
         WHERE email LIKE '". $email ."';";
         if ($conn->query($sql) === TRUE) {

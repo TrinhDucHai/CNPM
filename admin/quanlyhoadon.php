@@ -1,5 +1,3 @@
-
-
 <?php 
  include "head.php";
  
@@ -13,20 +11,19 @@
  include "aside.php";
 ?>
       <div class="content-wrapper">
-        <section class="content-header">
+      <section class="content-header">
           <h1>
-            Quản lý
-            <small>hóa đơn</small>
+            Danh sách
+            <small>Hóa đơn</small>
           </h1>
         </section>
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
-      
-
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Quản lý hóa đơn</h3>
+                </div>
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -36,16 +33,15 @@
                         <th>Số lượng</th>
                         <th>Đơn giá</th>
                         <th>Thành tiền</th> 
-                        <th>Ngày giao hàng </th>       
-                                   
+                        <th>Ngày giao hàng </th>                
                       </tr>
                     </thead>
                     <tbody>  
                
                     <?php
                          require '../inc/config.php';
-                         $sql="SELECT h.sodh,soluong,dongia,h.thanhtien
-                         ,s.Ten as tensanpham,ngaygiao
+                         $sql="SELECT h.sodh,soluong,dongia,h.thanhtien,s.Ten as tensanpham,ngaygiao,
+                         s.Ten as tensanpham,ngaygiao
                          from chitiethoadon c 
                          LEFT JOIN sanpham s on s.ID= c.masp
                          LEFT JOIN hoadon h on h.sodh= c.sodh Order by tensanpham  ";
@@ -60,15 +56,50 @@
                         <td><?php  echo $row["soluong"] ?></td>
                         <td><?php  echo $row["dongia"] ?>.000 VNĐ</td>
                         <td><?php  echo $row["thanhtien"] ?>0 VNĐ</td>  
+                        <td><?php 
+
+                        $date=date_create($row["ngaygiao"]);
+                        echo date_format($date,"d/m/Y");
+                         ?></td>   
+                        <td>
+                      
+                        <?php
+                        }
+                         ?>
+                        </td>        
                         <td>
                         <?php 
+
                         $date=date_create($row["ngaygiao"]);
                         echo date_format($date,"d/m/Y");
                          ?></td> 
                          <td></td>  
                          
-                        
-                              
+                        <td>
+                          
+                        <?php
+                        if($row["madv"]!= "")
+                        {
+                         ?>
+                        <?php
+                        $ma= $row["madv"];
+                        // $madv= implode(",",$ma);
+                        $sql="SELECT tendv from dichvu where madv  in ($ma)";
+                        $results = $conn->query($sql);
+                        if ($results->num_rows > 0) {
+                          // output data of each row
+                          while($s = $results->fetch_assoc()) {
+                         // output data of each row
+                           echo "<p>".$s["tendv"] ."</p>";                      
+                        }
+                      }
+                        ?>
+                        <?php
+                        }
+                         ?>
+                         
+                        </td>  
+
                         </tr>
            
                         <?php
@@ -81,27 +112,36 @@
                     </tbody>                   
                   </table>
               
-                </div>
+                </div><!-- /.box-body -->
              
              
-              </div>
+              </div><!-- /.box -->
             
-            </div>
-          </div>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
         </section>
-      </div>
+        <!-- /.content -->
+      </div><!-- /.content-wrapper -->
       <?php 
       include "footer.php";
      ?>                 			
-    </div>
+
+
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- DataTables -->
     <script src="plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <!-- SlimScroll -->
     <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
     <script src="plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- page script -->
     <script>
       $(function () {
         $("#example1").DataTable();
@@ -115,6 +155,8 @@
         });
       });
     </script>
+
+=======
     <script>
 function myFunction() {
     alert("Xóa thành công");

@@ -12,5 +12,4 @@ if(isset($_POST['create']))
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-
- ?>
+?>

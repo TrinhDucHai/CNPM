@@ -12,17 +12,13 @@ ob_start();
     <?php 
  include "aside.php";
 ?>
-      <!-- Content Wrapper. Contains page content -->
+
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             Sửa 
             <small>Nhà xuất bản</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang quản trị</a></li>
-          </ol>
         </section>
         <?php
    require '../inc/config.php';
@@ -31,21 +27,12 @@ ob_start();
    $query="SELECT ID,Ten from nhaxuatban where ID =".$id;
    $result = $conn->query($query);
 $row = $result->fetch_assoc();
-
 ?>
-        <!-- Main content -->
+
         <section class="content">
           <div class="row">
-            <!-- left column -->
-
-            <!-- right column -->
             <div class="col-md-12">
-              <!-- Horizontal Form -->
               <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Sửa Nhà xuất bản</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
                 <form class="form-horizontal" method="POST" action="<?php include 'xulysuanhasx.php' ?>">
                   <div class="box-body">
                     <div class="form-group">
@@ -55,28 +42,21 @@ $row = $result->fetch_assoc();
                         <input type="hidden" class="form-control" name="id" value="<?php echo $row["ID"] ?>">
                       </div>
                     </div>
-     
                   <div class="box-footer">
-                  <a href="qlynhasx.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
-                    <button type="submit" name="Edit" class="btn btn-info pull-right">Edit</button>
-                  </div><!-- /.box-body -->
-                  </div><!-- /.box-footer -->
+                  <a href="qlynhasx.php"><button type="button" name="cancel" class="btn btn-default">Hủy</button></a>
+                    <button type="submit" name="Edit" class="btn btn-info pull-right">Lưu lại</button>
+                  </div>
+                  </div>
                 </form>
-              </div><!-- /.box -->
-              <!-- general form elements disabled -->
-            <!-- /.box -->
-            </div><!--/.col (right) -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
-     
-      <!-- Control Sidebar -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+  
       <?php 
       include "footer.php";
      ?>
-  
-      <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>

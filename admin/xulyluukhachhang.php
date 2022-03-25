@@ -1,5 +1,3 @@
-
-
 <?php
 if(isset($_POST['create']))
 {
@@ -17,5 +15,4 @@ if(isset($_POST['create']))
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
-
 ?>

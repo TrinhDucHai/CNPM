@@ -21,8 +21,6 @@ ob_start();
             <small>Sách</small>
           </h1>
         </section>
-
-        <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-md-12">
@@ -30,7 +28,6 @@ ob_start();
                 <div class="box-header with-border">
                   <h3 class="box-title">Thêm Sách</h3>
                 </div>
-                <!-- form start -->
                 <form class="form-horizontal" method="POST" action="<?php include 'xulyluusp.php' ?>" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
@@ -71,33 +68,12 @@ ob_start();
                     </select>
                     </div>
                     </div>
-                    <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Ngày</label>
-                    <div class="col-sm-10">
-                    <input type="date" class="form-control" id="datechoose" name="ngay" required> 
-                    </div>
-                  </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label" >Giá</label>
                     <div class="col-sm-10">
                     <input type="text" class="form-control"  name="gia">
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Khuyến mãi</label>
-                    <div class="col-sm-10">
-                    <select class="form-control select2" style="width: 100%;" name="khuyenmai">
-                    <option selected="selected" value="1">Có khuyến mãi</option>
-                    <option  value="0">Không khuyến mãi</option>
-                    </select>
-                    </div>
-                    </div>
-                    <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Giá khuyến mãi</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="giakhuyenmai">
-                    </div>
-                    </div>
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-10">
@@ -106,7 +82,6 @@ ob_start();
                     </textarea>
                     </div>
                   </div>                 
-     
                   <div class="box-footer">
                    <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Hủy</button></a>
                     <button type="submit" name="create" class="btn btn-info pull-right">Lưu lại</button>
@@ -143,20 +118,6 @@ ob_start();
     </script>
 
     <script src="../../dist/js/demo.js"></script>
-
-<script>
-    var date = new Date();
-
-    var day = date.getDate();
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-
-    if (month < 10) month = "0" + month;
-    if (day < 10) day = "0" + day;
-
-    var today = year + "-" + month + "-" + day;
-    document.getElementById("datechoose").value = today;
-</script>
   </body>
 </html>
 <?php ob_end_flush(); ?>

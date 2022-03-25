@@ -13,8 +13,3 @@
 
 $conn->close();
 ?>
-        <script>
-function myFunction() {
-    alert("Xóa thành công");
-}
-</script>

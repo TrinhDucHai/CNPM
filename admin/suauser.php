@@ -23,16 +23,15 @@ $row = $result->fetch_assoc();
 
 ?>
         <section class="content-header">
-            <ol class="breadcrumb">
-            </ol>
+          <h1>
+            Sửa
+            <small>Khách hàng</small>
+          </h1>
         </section>
             <section class="content">
                 <div class="row">
                     <div class="col-md-12">
                     <div class="box box-info">
-                        <div class="box-header with-border">
-                        <h3 class="box-title">Sửa khách hàng</h3>
-                    </div>
                         <form class="form-horizontal"  method="POST" action="<?php include 'xulysuauser.php'?>" enctype="multipart/form-data">
                             <div class="box-body">
                                 <div class="form-group">
@@ -55,8 +54,8 @@ $row = $result->fetch_assoc();
                                 </div>
                                 
                                 <div class="box-footer">
-                                    <a href="qlykhachhang.php"><button type="button" name="cancel" class="btn btn-default">Cancel</button></a>
-                                    <button type="submit" name="Edit" class="btn btn-info pull-right">Edit</button>
+                                    <a href="qlykhachhang.php"><button type="button" name="cancel" class="btn btn-default">Hủy</button></a>
+                                    <button type="submit" name="Edit" class="btn btn-info pull-right">Lưu lại</button>
                                 </div>
                             </div>
                         </form>

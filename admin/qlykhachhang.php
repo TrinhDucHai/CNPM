@@ -1,10 +1,7 @@
-
-
 <?php 
  include "head.php";
- 
 ?>
-  <body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
     <?php 
  include "Header.php";
@@ -12,20 +9,18 @@
     <?php 
  include "aside.php";
 ?>
-
       <div class="content-wrapper">
-        <section class="content-header">
+      <section class="content-header">
+          <h1>
+            Danh sách
+            <small>Khách hàng</small>
+          </h1>
         </section>
 
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
-      
-
               <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Quản lý khách hàng</h3>
-                </div>
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
@@ -33,7 +28,7 @@
                         <th>Email</th>
                         <th>Họ tên</th>
                         <th>Số điện thoại</th>
-                        <th>Tác Vụ</th>
+                        <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>  
@@ -59,20 +54,14 @@
                           }
                         }
                          ?>
-                     
-                      
                     </tbody>                   
                   </table>
                   <div  style="text-align:left">
                 <a class="btn btn-primary "href="themkhachhang.php">
                     Thêm Khách hàng</a>
                 </div>  
-                  
                 </div>
-             
-             
               </div>
-            
             </div>
           </div>
         </section>
@@ -91,19 +80,6 @@
     <script src="plugins/fastclick/fastclick.min.js"></script>
     <script src="dist/js/app.min.js"></script>
     <script src="dist/js/demo.js"></script>
-    <script>
-      $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-      });
-    </script>
     <script>
 function myFunction() {
     alert("Xóa thành công");

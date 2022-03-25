@@ -18,17 +18,10 @@
           </h1>
         </section>
 
-        <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
-      
-      
               <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Quản lý Sách</h3>
-                </div>
-       
                 <div class="box-body">
         
                   <table id="example1" class="table table-bordered table-striped">
@@ -37,27 +30,23 @@
                         <th>Tên</th>
                         <th>Giá</th>
                         <th>Hình ảnh</th>
-                        <th>Tác giả</th>
-                        <th>Nhà xuất bản</th>
                         <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>  
                     <?php
                          require '../inc/config.php';
-                         $sql="SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.tacgia,s.KhuyenMai,s.Mota, n.Ten as Tennhasx
+                         $sql="SELECT s.ID,s.Ten,s.Gia,s.HinhAnh,s.tacgia,s.Mota, n.Ten as Tennhasx
                          from sanpham s 
-                         LEFT JOIN nhaxuatban n on n.ID = s.Manhasx   ORDER BY s.Ten  ";
+                         LEFT JOIN nhaxuatban n on n.ID = s.Manhasx ORDER BY s.Ten  ";
                          $result = $conn->query($sql); 
-                         if ($result->num_rows > 0) {
+                         if ($result->num_rows>0) {
                           while($row = $result->fetch_assoc()) {
                       ?>       
                         <tr>           
                         <td ><a href ="chitietsp.php?id=<?php echo $row["ID"]?>" style="color:black"><?php echo $row["Ten"] ?></a></td>
                         <td><?php echo $row["Gia"] ?></td>
                         <td><img src="../images/<?php echo $row["HinhAnh"]?>" style="width:100px;height:100px"></td>
-                        <td><?php echo $row["tacgia"] ?></td>
-                        <td><?php echo $row["Tennhasx"] ?></td>
                         <td><a class="btn btn-primary" href="suasp.php?id=<?php echo $row["ID"] ?>">
                     <i class="fa fa-edit fa-lg"<acronym title="Chỉnh sửa"></acronym></i>
                        </a>
@@ -89,9 +78,11 @@
       include "footer.php";
      ?>
 
-      <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
-
+<script>
+function myFunction() {
+    alert("Xóa thành công");
+}
+</script>
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -107,23 +98,5 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
     <!-- page script -->
-    <script>
-      $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-      });
-    </script>
-        <script>
-function myFunction() {
-    alert("Xóa thành công");
-}
-</script>
   </body>
 </html>

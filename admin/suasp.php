@@ -17,7 +17,7 @@ ob_start();
    require '../inc/config.php';
    //lay san pham theo id
    $id = $_GET["id"];
-   $query="SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.tacgia,s.KhuyenMai,s.giakhuyenmai,s.Mota, n.Ten as Tennhasx,s.Manhasx
+   $query="SELECT s.ID,s.Ten,s.Gia,s.HinhAnh,s.tacgia,s.Mota, n.Ten as Tennhasx,s.Manhasx
    from sanpham s 
    LEFT JOIN nhaxuatban n on n.ID = s.Manhasx
 	WHERE  s.id =".$id;
@@ -30,20 +30,12 @@ $row = $result->fetch_assoc();
             Sửa
             <small>Sách</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang quản trị</a></li>
-          </ol>
         </section>
-        <!-- Main content -->
         <section class="content">
           <div class="row">
 
             <div class="col-md-12">
-              <!-- Horizontal Form -->
               <div class="box box-info">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Sửa Sách</h3>
-                </div>
                 <form class="form-horizontal"  method="POST" action="<?php include 'xulysuasp.php'?>" enctype="multipart/form-data">
                   <div class="box-body">
                     <div class="form-group">
@@ -95,56 +87,11 @@ $row = $result->fetch_assoc();
                     </div>
                     </div>
                     <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">Ngày</label>
-                    <div class="col-sm-10">
-                    <input type="date" class="form-control" id="datechoose" required name="ngay" value="<?php echo $row["date"] ?>" placeholder="Password">
-                    </div>
-                    </div>
-                    <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Giá</label>
                     <div class="col-sm-10">
                     <input type="text" class="form-control"  name="gia" required value="<?php echo $row["Gia"] ?>">
                     </div>
                     </div>
-                    <?php 
-                       if($row["KhuyenMai"]  == 1)
-                       {
-                    ?>
-                    <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Khuyến mãi</label>
-                    <div class="col-sm-10">
-                    <select class="form-control select2" style="width: 100%;" name="khuyenmai">
-                    <option selected="selected" value="1">Có khuyến mãi</option>
-                    <option  value="0">Không khuyến mãi</option>
-                    </select>
-                    </div>
-                    </div>
-                    <?php
-                       }
-                     ?>
-                                  <?php 
-                       if($row["KhuyenMai"]  == 0)
-                       {
-                    ?>
-                    <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Khuyến mãi</label>
-                    <div class="col-sm-10">
-                    <select class="form-control select2" style="width: 100%;" name="khuyenmai">
-                    <option selected="selected" value="0">False</option>
-                    <option  value="1">True</option>
-                    </select>
-                    </div>
-                    </div>
-                    <?php
-                       }
-                     ?>
-                                    <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label" >Giá khuyến mãi</label>
-                    <div class="col-sm-10">
-                    <input type="text" class="form-control"  name="giakhuyenmai" value="<?php echo $row["giakhuyenmai"] ?>">
-                    </div>
-                    </div>
-
                   <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-10">

@@ -13,10 +13,7 @@ include "Header.php";
    <?php 
 include "aside.php";
 ?>
-
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
             Thêm
@@ -24,20 +21,13 @@ include "aside.php";
           </h1>
         </section>
 
-        <!-- Main content -->
         <section class="content">
           <div class="row">
-            <!-- left column -->
-
-            <!-- right column -->
-  
             <div class="col-md-12">
-              <!-- Horizontal Form -->
               <div class="box box-info">
                 <div class="box-header with-border">
                   <h3 class="box-title">Thêm Nhà xuất bản</h3>
-                </div><!-- /.box-header -->
-                <!-- form start -->
+                </div>
                 <form class="form-horizontal" method="POST" action="<?php include 'xulyluunhasx.php' ?>">
                   <div class="box-body">
                     <div class="form-group">
@@ -46,25 +36,22 @@ include "aside.php";
                         <input type="text" name="name" class="form-control" placeholder="Nhập tên Nhà xuất bản" required>
                       </div>
                     </div>
-                  </div><!-- /.box-body -->
+                  </div>
                   <div class="box-footer">
                   <a href="qlynhasx.php"><button type="button" name="cancel" class="btn btn-default">Hủy</button></a>
                     <button type="submit" name="create" class="btn btn-info pull-right">Lưu lại</button>
-                  </div><!-- /.box-footer -->
+                  </div>
                 </form>
-              </div><!-- /.box -->
-              <!-- general form elements disabled -->
-            <!-- /.box -->
-            </div><!--/.col (right) -->
-          </div>   <!-- /.row -->
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
       <?php 
       include "footer.php";
      ?>
-  
-      <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
+ 
 
     <!-- jQuery 2.1.4 -->
     <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>

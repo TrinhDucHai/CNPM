@@ -22,27 +22,18 @@ ob_start();
       <?php 
  include "aside.php";
 ?>
-
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" style="min-height: 901px; background-color: #1a2226">
-        <!-- Content Header (Page header) -->
+   <div class="content-wrapper" style="min-height: 901px; background-color: #1a2226">
+        
         <section class="content-header">
           <h1 style="color: #f3906c">
            Trang quản trị
             <small style="color: #fcc39b">Quản trị viên</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="#" style="color: #fcc39b"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active" style="color: #fcc39b">Trang quản trị</li>
-          </ol>
         </section>
 
-        <!-- Main content -->
         <section class="content">
-          <!-- Small boxes (Stat box) -->
           <div class="row">
             <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
                 <h3>Quản lý</h3>
@@ -53,9 +44,9 @@ ob_start();
                 </div>
                 <a href="qlysanpham.php" class="small-box-footer">Xem Danh Sách <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div><!-- ./col -->
+            </div>
             <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
+           
               <div class="small-box bg-green">
                 <div class="inner">
                 <h3>Quản lý</h3>
@@ -69,7 +60,7 @@ ob_start();
             </div><!-- ./col -->
  
             <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
+              
               <div class="small-box bg-yellow">
                 <div class="inner">
                 <h3>Danh Sách</h3>
@@ -80,9 +71,9 @@ ob_start();
                 </div>
                 <a href="qlykhachhang.php" class="small-box-footer">Xem Danh Sách <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div><!-- ./col -->
+            </div>
             <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
+             
               <div class="small-box bg-red">
                 <div class="inner">
                 <h3>Danh Sách</h3>
@@ -93,18 +84,15 @@ ob_start();
                 </div>
                 <a href="quanlyhoadon.php" class="small-box-footer">Xem Danh Sách <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div><!-- ./col -->
-            </div><!-- /.row -->
-          <!-- Main row -->
-        
-        </section><!-- /.content -->
-      </div><!-- /.content-wrapper -->
+            </div>
+            </div>
+
+        </section>
+      </div>
       <?php 
  include "footer.php";
 ?>
 
-      <div class="control-sidebar-bg"></div>
-    </div><!-- ./wrapper -->
 
     <?php 
  include "script.php";

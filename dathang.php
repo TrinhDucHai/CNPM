@@ -57,7 +57,22 @@ include "navbar.php";
 				   </div>		
 					 		 
 			</div>				
-				
+			<label>Service</label>
+                    <select style="max-height:50px; margin-bottom: 20px" class="form-control select2" multiple="multiple" name="dichvu" id="dichvu" onchange ="laygiatheoiddichvu(this.value)"  data-placeholder="Chọn dịch vụ" >
+						<?php
+						 require "inc/config.php";
+                         $sql="SELECT * from dichvu ";
+                         $result = $conn->query($sql); 
+                         if ($result->num_rows > 0) {
+                          // xuat data cho moi don
+                          while($row = $result->fetch_assoc()) {
+                      ?>
+                      <option value="<?php echo $row["madv"] ?>"><?php echo $row["tendv"] ?></option>
+											<?php
+													}
+												}
+											?>
+                    </select>						
 		</div>        
 		<div class="col-lg-5">
 		<div class="panel panel-default">
@@ -292,3 +307,49 @@ include "navbar.php";
         $(".select2").select2();
       });
 </script>
+<!-- dung ajax de tinh tong tien khi chon ma dich vu -->
+<!-- str la  gia tri madv khi thay doi select 2 -->
+<script>
+function laygiatheoiddichvu(str) {
+  var xhttp;
+	var div = document.getElementById("result");
+	var thannhtien = document.getElementById("thannhtien");
+	//truong hop id khong co gia tri thi tra ve tong tien ban dau
+  if (str.length == 0) { 
+		div.innerHTML  = thannhtien.value ;
+		//truyen du lieu de hien thi len html
+		div.innerHTML = div.innerHTML +".000 VNĐ";
+		document.getElementById("total").value = thannhtien.value;
+			// gian bien madv = value cua select 2
+	var madv = $('.select2').select2("val");
+	//truyen madv ve html co id la madv
+	document.getElementById("madv").value = madv;
+	console.log(madv);
+    return;
+  }
+	//truong hop co gia tri thi lay thanh tien + tong gia dich vu
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		//gia bien sum = giatritrave
+			var sum = this.responseText;
+		//ep thanh kieu float de tinh thanh tien
+		div.innerHTML = parseFloat(sum) + parseFloat(thannhtien.value) ;
+		//truyen du lieu de hien thi len html
+		div.innerHTML = div.innerHTML + ".000 VNĐ";
+		//truyen madv ve html co id la total
+		document.getElementById("total").value =   parseFloat(sum) + parseFloat(thannhtien.value);
+		// console.log(sum);
+    }
+  };
+	// gian bien madv = value cua select 2
+	var madv = $('.select2').select2("val");
+	//truyen madv ve html co id la madv
+	document.getElementById("madv").value = madv;
+	console.log(madv);
+	//truyen madv ve file laygiadv.php de lay tonggia
+  xhttp.open("GET", "laygiadv.php?madv="+madv, true);
+  xhttp.send();   
+}
+</script>
+<?php ob_end_flush(); ?>

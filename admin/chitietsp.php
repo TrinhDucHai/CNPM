@@ -1,4 +1,4 @@
-<!--Trinh Duc Hai-->
+
 
 <?php 
 include "head.php";
@@ -13,12 +13,12 @@ include "Header.php";
 include "aside.php";
 ?>
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        
         <?php
    require '../inc/config.php';
    //lay san pham theo id
    $id = $_GET["id"];
-   $query="SELECT s.ID,s.Ten,s.date,s.Gia,s.HinhAnh,s.KhuyenMai,s.giakhuyenmai,s.Mota, n.Ten as Tennhasx,s.Manhasx
+   $query="SELECT s.ID,s.Ten,s.Gia,s.HinhAnh,s.Mota, n.Ten as Tennhasx,s.Manhasx
    from sanpham s 
    LEFT JOIN nhaxuatban n on n.ID = s.Manhasx
 	WHERE  s.id =".$id;
@@ -32,8 +32,6 @@ $row = $result->fetch_assoc();
             <small>Sách</small>
           </h1>
         </section>
-
-        <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-md-12" >
@@ -62,49 +60,11 @@ $row = $result->fetch_assoc();
                       </div> 
                     </div>
                     <div class="form-group">
-                    <label class="col-sm-2 ">Ngày:</label>
-                    <div class="col-sm-5">
-                      <p><?php echo $row["date"] ?></p>
-                      </div> 
-                    </div>
-                    <div class="form-group">
                     <label  class="col-sm-2 ">Giá:</label>  
                     <div class="col-sm-5">
                       <p><?php echo $row["Gia"] ?>.000 VNĐ</p>
                       </div>        
                     </div>
-                    <?php 
-                    if($row["KhuyenMai"]  == 1)
-                    {
-                    ?>
-                    <div class="form-group">
-                    <label  class="col-sm-2" >Khuyến mãi:</label>    
-                    <div class="col-sm-5">
-                      <p style="color:red">Có khuyến mãi</p>
-                      </div>    
-                    </div>
-                    <div class="form-group">
-                    <label  class="col-sm-2" >Giá khuyến mãi:</label>    
-                    <div class="col-sm-5">
-                      <p style="color:red"><?php echo $row["giakhuyenmai"]?>.000 VNĐ</p>
-                      </div>    
-                    </div>
-                    <?php 
-                    }
-                    ?>
-                        <?php 
-                    if($row["KhuyenMai"]  == 0)
-                    {
-                    ?>
-                    <div class="form-group">
-                    <label  class="col-sm-2" >Khuyến mãi:</label>    
-                    <div class="col-sm-5">
-                      <p style="color:red">Không có khuyến mãi</p>
-                      </div>    
-                    </div>
-                    <?php 
-                    }
-                    ?>  
                   <div class="form-group">
                     <label  class="col-sm-2 ">Mô tả: </label>
                     <div class="col-sm-5">
@@ -112,10 +72,10 @@ $row = $result->fetch_assoc();
                       </div> 
                     
                   </div>
-                  </div><!-- /.box-body -->
+                  </div>
                   <div class="box-footer">
                   <a href="qlysanpham.php"><button type="button" name="cancel" class="btn btn-default">Quay lại</button></a>
-                  </div><!-- /.box-footer -->
+                  </div>
                 </form>
               </div>
             </div>

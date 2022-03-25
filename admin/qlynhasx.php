@@ -1,5 +1,3 @@
-
-
 <?php 
  include "head.php";
  
@@ -12,38 +10,24 @@
     <?php 
  include "aside.php";
 ?>
-
-      <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
+      <section class="content-header">
           <h1>
-           Quản lý
+            Quản lý
             <small>Nhà xuất bản</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="index.php"><i class="fa fa-dashboard"></i> Trang chủ</a></li>
-            <li><a href="#">Quản lý</a></li>
-            <li class="active">Quản lý Nhà xuất bản</li>
-          </ol>
         </section>
 
-        <!-- Main content -->
         <section class="content">
           <div class="row">
             <div class="col-xs-12">
-      
-
               <div class="box">
-                <div class="box-header">
-                  <h3 class="box-title">Quản lý Nhà xuất bản</h3>
-                </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead >
                       <tr>
                         <th>Tên</th>
-                        <th>Tác vụ</th>
+                        <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody> 
@@ -52,7 +36,6 @@
                          $sql="SELECT ID,Ten from nhaxuatban ";
                          $result = $conn->query($sql); 
                          if ($result->num_rows > 0) {
-                          // output data of each row
                           while($row = $result->fetch_assoc()) {
                       ?>      
                         <tr>                
@@ -72,16 +55,12 @@
                 <a class="btn btn-primary "href="themnhasx.php">
                     Thêm Nhà xuất bản</a>
                 </div>         
-                </div><!-- /.box-body -->
-             
-             
-              </div><!-- /.box -->
-            
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
-        <!-- /.content -->
-      </div><!-- /.content-wrapper -->
+      </div>
       <?php 
       include "footer.php";
      ?>
@@ -104,19 +83,6 @@
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
     <!-- page script -->
-    <script>
-      $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-      });
-    </script>
         <script>
 function myFunction() {
     alert("Xóa thành công");

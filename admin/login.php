@@ -10,7 +10,7 @@ ob_start();
 <!DOCTYPE html>
 <html>
 <head>	
-	<title>Login</title>
+	<title>Đăng nhập trang quan trị</title>
 	<script src="jQuery/jquery-3.1.1.min.js" type="text/javascript"></script>
 
 	<style>
@@ -78,8 +78,6 @@ body{
 	<br>
 	<form action="<?php include "loginAdmin.php" ?>" method="post">
 		<center>
-			
-				<h2 id="blinking" style="color: lavender">Please Login Here</h2>
 				<div id="box">
 					<input type="text" name="txtdangnhap" id="in" placeholder="Tên đăng nhập" style="margin-top: 50px"><br>
 					<input type="password" name="txtmatkhau" placeholder="Mật khẩu	" id="in" style="margin-top: 10px">
@@ -91,7 +89,6 @@ body{
 	</form>
 	<br><br><br><br>
 	<script src="script.js"></script>
-	
 	<footer>
 		<hr>
 			<p id="copy" style="color: black; font-size: 2rem"><b>61TH3 Nhóm 3</b></p>
