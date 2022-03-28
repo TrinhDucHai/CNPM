@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 23, 2022 lúc 02:22 AM
+-- Thời gian đã tạo: Th3 28, 2022 lúc 07:39 AM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.12
 
@@ -67,7 +67,6 @@ CREATE TABLE `hoadon` (
   `tenkh` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `diachi` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `dienthoai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `hinhthucthanhtoan` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `thanhtien` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -75,10 +74,10 @@ CREATE TABLE `hoadon` (
 -- Đang đổ dữ liệu cho bảng `hoadon`
 --
 
-INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dienthoai`, `hinhthucthanhtoan`, `thanhtien`) VALUES
-(130, 'hai@gmail.com', '2022-03-13', 'hai', 'dqdq', '', 'ATM', '0.00'),
-(131, 'hai@gmail.com', '2022-03-13', 'hai', 'a', '', 'ATM', '0.00'),
-(132, 'hai@gmail.com', '2022-03-19', 'hai', 'a', '', 'Live', '0.00');
+INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dienthoai`, `thanhtien`) VALUES
+(130, 'hai@gmail.com', '2022-03-13', 'hai', 'dqdq', '', '0.00'),
+(131, 'hai@gmail.com', '2022-03-13', 'hai', 'a', '', '0.00'),
+(132, 'hai@gmail.com', '2022-03-19', 'hai', 'a', '', '0.00');
 
 -- --------------------------------------------------------
 
@@ -88,16 +87,17 @@ INSERT INTO `hoadon` (`sodh`, `emailkh`, `ngaygiao`, `tenkh`, `diachi`, `dientho
 
 CREATE TABLE `nhaxuatban` (
   `ID` bigint(10) NOT NULL,
-  `Ten` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL
+  `Ten` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci NOT NULL,
+  `Diachi` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nhaxuatban`
 --
 
-INSERT INTO `nhaxuatban` (`ID`, `Ten`) VALUES
-(19, 'NXB Kim Đồng'),
-(21, 'Red Velvet');
+INSERT INTO `nhaxuatban` (`ID`, `Ten`, `Diachi`) VALUES
+(19, 'NXB Kim Đồng', ''),
+(23, 'Red Velvet', '');
 
 -- --------------------------------------------------------
 
@@ -112,9 +112,6 @@ CREATE TABLE `sanpham` (
   `HinhAnh` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `Manhasx` bigint(10) NOT NULL,
   `Mota` text COLLATE utf8_unicode_ci NOT NULL,
-  `date` date NOT NULL,
-  `KhuyenMai` tinyint(1) NOT NULL,
-  `giakhuyenmai` double NOT NULL,
   `tacgia` varchar(256) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -122,11 +119,11 @@ CREATE TABLE `sanpham` (
 -- Đang đổ dữ liệu cho bảng `sanpham`
 --
 
-INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `date`, `KhuyenMai`, `giakhuyenmai`, `tacgia`) VALUES
-(438, 'Không gia đình', 100000, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
-(439, 'Nếu chỉ còn 1 ngày để sống', 100000, 'book2.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Nicola Yoon'),
-(441, 'Ông già và biển cả', 100000, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 0, 'Hecto Marlot'),
-(442, 'Sherlocks Holmes', 100000, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', '2022-03-12', 1, 80000, 'Sir Arthur Conan Doyle');
+INSERT INTO `sanpham` (`ID`, `Ten`, `Gia`, `HinhAnh`, `Manhasx`, `Mota`, `tacgia`) VALUES
+(438, 'Không gia đình', 200, 'book1.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', 'Hecto Marlot'),
+(439, 'Nếu chỉ còn 1 ngày để sống', 120, 'book2.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', 'Nicola Yoon'),
+(441, 'Ông già và biển cả ', 120, 'book3.jpg', 19, '<p>Nhập m&ocirc; tả</p>\r\n', 'Hecto Marlot'),
+(442, 'Sherlocks Holmes', 100, 'book4.png', 19, '<p>Nhập m&ocirc; tả</p>\r\n', 'Sir Arthur Conan Doyle');
 
 -- --------------------------------------------------------
 
@@ -146,13 +143,14 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`email`, `matkhau`, `HoTen`, `DienThoai`) VALUES
-('aa@gmail.com', 123, 'aa', '1'),
-('chien@gmail.com', 123, 'chien', ''),
-('duong@gmail.com', 123, 'duong', ''),
+('aa@gmail.com', 123, 'aaaa', '111111'),
+('chien@gmail.com', 123, 'chien', '0999999'),
+('duong@gmail.com', 123, 'duong', '0999991111'),
 ('hai@gmail.com', 123, 'hai', ''),
 ('hieu@gmail.com', 123, 'hieu', ''),
 ('Irene@gmail.com', 123, 'Irene', '1'),
-('phong@gmail.com', 123, 'phong', ''),
+('Joy@gmail.com', 123, 'Joy', '1'),
+('phong@gmail.com', 123, 'phong', '0999999'),
 ('truong@gmail.com', 123, 'truong', '136888999'),
 ('Yuri@gmail.com', 123, 'Yuri', '1');
 
@@ -193,12 +191,7 @@ ALTER TABLE `nhaxuatban`
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Ten` (`Ten`),
-  ADD KEY `sanpham` (`Manhasx`),
-  ADD KEY `giakhuyenmai` (`giakhuyenmai`),
-  ADD KEY `giakhuyenmai_2` (`giakhuyenmai`),
-  ADD KEY `giakhuyenmai_3` (`giakhuyenmai`),
-  ADD KEY `giakhuyenmai_4` (`giakhuyenmai`),
-  ADD KEY `giakhuyenmai_5` (`giakhuyenmai`);
+  ADD KEY `sanpham` (`Manhasx`);
 ALTER TABLE `sanpham` ADD FULLTEXT KEY `Ten_2` (`Ten`);
 
 --
@@ -227,13 +220,13 @@ ALTER TABLE `hoadon`
 -- AUTO_INCREMENT cho bảng `nhaxuatban`
 --
 ALTER TABLE `nhaxuatban`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT cho bảng `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=449;
+  MODIFY `ID` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=450;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
